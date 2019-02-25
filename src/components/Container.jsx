@@ -8,9 +8,9 @@ import Section from './Section';
 
 
 const apps = [
-  { id: 'blackjack', Component: Blackjack },
-  { id: 'rock_paper_scissors', Component: RockPaperScissors },
-  { id: 'tic_tac_toe', Component: TicTacToe },
+  { id: 'blackjack', label: 'Black', Component: Blackjack },
+  { id: 'rock_paper_scissors', label: 'Rock', Component: RockPaperScissors },
+  { id: 'tic_tac_toe', label: 'Tic', Component: TicTacToe },
 ];
 
 const App = props => {
@@ -35,14 +35,23 @@ export default function Container({ player }) {
   return (
     <Router>
       <StyledContainer>
-        <nav>
+        {/* <nav>
           <Link to='/'>Black</Link>
           <Link to='/rock_paper_scissors'>Rock</Link>
           <Link to='/tic_tac_toe'>Tic</Link>
           <Link to='/contact'>Contact</Link>
+        </nav> */}
+
+        <nav>
+          {
+            apps.map(
+              app => <Link key={app.id} to={`/apps/${app.id}`}>{app.label}</Link>,
+            )
+          }
+          <Link to='/contact'>Contact</Link>
         </nav>
 
-        <Route
+        {/* <Route
           exact
           path='/'
           render={pr => <Blackjack {...pr} player={player} />}
@@ -56,6 +65,11 @@ export default function Container({ player }) {
         <Route
           path='/tic_tac_toe'
           render={pr => <TicTacToe {...pr} player={player} />}
+        /> */}
+
+        <Route
+          path='/apps/:id'
+          render={pr => <App {...pr} player={player} />}
         />
 
         <Section

@@ -35,13 +35,6 @@ export default function Container({ player }) {
   return (
     <Router>
       <StyledContainer>
-        {/* <nav>
-          <Link to='/'>Black</Link>
-          <Link to='/rock_paper_scissors'>Rock</Link>
-          <Link to='/tic_tac_toe'>Tic</Link>
-          <Link to='/contact'>Contact</Link>
-        </nav> */}
-
         <nav>
           {
             apps.map(
@@ -50,6 +43,18 @@ export default function Container({ player }) {
           }
           <Link to='/contact'>Contact</Link>
         </nav>
+
+        {/* <nav>
+          <Link to='/'>Black</Link>
+          <Link to='/rock_paper_scissors'>Rock</Link>
+          <Link to='/tic_tac_toe'>Tic</Link>
+          <Link to='/contact'>Contact</Link>
+        </nav> */}
+
+        <Route
+          path='/apps/:id'
+          render={pr => <App {...pr} player={player} />}
+        />
 
         {/* <Route
           exact
@@ -66,11 +71,6 @@ export default function Container({ player }) {
           path='/tic_tac_toe'
           render={pr => <TicTacToe {...pr} player={player} />}
         /> */}
-
-        <Route
-          path='/apps/:id'
-          render={pr => <App {...pr} player={player} />}
-        />
 
         <Section
           color='#d6247a'

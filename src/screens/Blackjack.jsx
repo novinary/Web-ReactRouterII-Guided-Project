@@ -10,6 +10,8 @@ export default function Blackjack(props) {
       color='#4286f4'
       heading='Blackjack'
       content={`${props.player} will be playing Blackjack.`}
-    />
+    >
+      {JSON.stringify(props.history)}
+    </Section>
   );
 }

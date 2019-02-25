@@ -22,13 +22,16 @@ const StyledSection = styled.section`
   border-radius: 32px;
 `;
 
-export default function Section({ heading, content, color }) {
-  return (
-    <StyledSection color={color}>
-      <h3>{heading}</h3>
-      <p>{content}</p>
-    </StyledSection>
-  );
+export default class Section extends React.Component {
+  render() {
+    return (
+      <StyledSection color={this.props.color}>
+        <h3>{this.props.heading}</h3>
+        <p>{this.props.content}</p>
+        {this.props.children}
+      </StyledSection>
+    );
+  }
 }
 
 Section.propTypes = {

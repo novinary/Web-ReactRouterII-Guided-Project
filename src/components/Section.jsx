@@ -22,11 +22,10 @@ const StyledSection = styled.section`
   border-radius: 32px;
 `;
 
-export default function Section({ heading, content, color, path }) {
+export default function Section({ heading, content, color }) {
   return (
     <StyledSection color={color}>
       <h3>{heading}</h3>
-      {!!path && <h5>{path}</h5>}
       <p>{content}</p>
     </StyledSection>
   );
@@ -36,7 +35,6 @@ Section.propTypes = {
   heading: string,
   content: string,
   color: string,
-  path: string,
 };
 
 Section.defaultProps = {

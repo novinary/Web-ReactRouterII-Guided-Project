@@ -36,6 +36,7 @@ export default function Container() {
     <Router>
       <StyledContainer>
         <nav>
+          <Link to='/'>Home</Link>
           <Link to='/blackjack'>Black</Link>
           <Link to='/rock_paper_scissors'>Rock</Link>
           <Link to='/tic_tac_toe'>Tic</Link>

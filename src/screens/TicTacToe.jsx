@@ -2,14 +2,12 @@ import React from 'react';
 import Section from '../components/Section';
 
 
-export default function TicTacToe() {
+export default function TicTacToe(props) {
   return (
-    <div className='tic-tac-toe'>
-      <Section
-        color='#ffd20c'
-        heading='Tic Tac Toe'
-        content='This my Tic Tac Toe game.'
-      />
-    </div>
+    <Section
+      color='#ffd20c'
+      heading='Tic Tac Toe'
+      content={`${props.player} will be playing Tic Tac Toe.`}
+    />
   );
 }

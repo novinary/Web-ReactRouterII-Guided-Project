@@ -31,7 +31,7 @@ const StyledContainer = styled.div`
   }
 `;
 
-export default function Container() {
+export default function Container({ player }) {
   return (
     <Router>
       <StyledContainer>
@@ -42,17 +42,21 @@ export default function Container() {
           <Link to='/contact'>Contact</Link>
         </nav>
 
-        <Route exact path='/' component={Blackjack} />
-        {/* <Route path='/apps/:id' component={App} /> */}
+        <Route
+          exact
+          path='/'
+          render={pr => <Blackjack {...pr} player={player} />}
+        />
 
-        {/* <Blackjack path='/' /> */}
-        <Route exact path='/' component={Blackjack} />
+        <Route
+          path='/rock_paper_scissors'
+          render={pr => <RockPaperScissors {...pr} player={player} />}
+        />
 
-        {/* <RockPaperScissors path='/rock_paper_scissors' /> */}
-        <Route exact path='/rock_paper_scissors' component={RockPaperScissors} />
-
-        {/* <TicTacToe path='/tic_tac_toe' /> */}
-        <Route exact path='/tic_tac_toe' component={TicTacToe} />
+        <Route
+          path='/tic_tac_toe'
+          render={pr => <TicTacToe {...pr} player={player} />}
+        />
 
         <Section
           color='#d6247a'

@@ -35,30 +35,29 @@ export default function Container({ player }) {
   return (
     <Router>
       <StyledContainer>
-        <nav>
+        {/* <nav>
           {
             apps.map(
               app => <Link key={app.id} to={`/apps/${app.id}`}>{app.label}</Link>,
             )
           }
           <Link to='/contact'>Contact</Link>
-        </nav>
-
-        {/* <nav>
-          <Link to='/'>Black</Link>
-          <Link to='/rock_paper_scissors'>Rock</Link>
-          <Link to='/tic_tac_toe'>Tic</Link>
-          <Link to='/contact'>Contact</Link>
         </nav> */}
 
-        <Route
-          path='/apps/:id'
-          render={pr => <App {...pr} player={player} />}
-        />
+        <nav>
+          <Link to='/'>Home</Link>
+          <Link to='/blackjack'>Black</Link>
+          <Link to='/rock_paper_scissors'>Rock</Link>
+          <Link to='/tic_tac_toe'>Tic</Link>
+        </nav>
 
         {/* <Route
-          exact
-          path='/'
+          path='/apps/:id'
+          render={pr => <App {...pr} player={player} />}
+        /> */}
+
+        <Route
+          path='/blackjack'
           render={pr => <Blackjack {...pr} player={player} />}
         />
 
@@ -70,7 +69,7 @@ export default function Container({ player }) {
         <Route
           path='/tic_tac_toe'
           render={pr => <TicTacToe {...pr} player={player} />}
-        /> */}
+        />
 
         <Section
           color='#d6247a'

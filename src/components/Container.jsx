@@ -36,23 +36,23 @@ export default function Container() {
     <Router>
       <StyledContainer>
         <nav>
-          <Link to='/apps/blackjack'>Black</Link>
-          <Link to='/apps/rock_paper_scissors'>Rock</Link>
-          <Link to='/apps/tic_tac_toe'>Tic</Link>
+          <Link to='/'>Black</Link>
+          <Link to='/rock_paper_scissors'>Rock</Link>
+          <Link to='/tic_tac_toe'>Tic</Link>
           <Link to='/contact'>Contact</Link>
         </nav>
 
         <Route exact path='/' component={Blackjack} />
-        <Route path='/apps/:id' component={App} />
+        {/* <Route path='/apps/:id' component={App} /> */}
 
         {/* <Blackjack path='/' /> */}
-        {/* <Route exact path='/' component={Blackjack} /> */}
+        <Route exact path='/' component={Blackjack} />
 
         {/* <RockPaperScissors path='/rock_paper_scissors' /> */}
-        {/* <Route exact path='/rock_paper_scissors' component={RockPaperScissors} /> */}
+        <Route exact path='/rock_paper_scissors' component={RockPaperScissors} />
 
         {/* <TicTacToe path='/tic_tac_toe' /> */}
-        {/* <Route exact path='/tic_tac_toe' component={TicTacToe} /> */}
+        <Route exact path='/tic_tac_toe' component={TicTacToe} />
 
         <Section
           color='#d6247a'

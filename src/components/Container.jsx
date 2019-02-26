@@ -44,7 +44,17 @@ export default function Container(props) {
 
         <Route
           path='/blackjack'
-          render={() => <Blackjack player={props.player} />}
+          render={
+            ({ history, match, location, ...rest }) => (
+              <Blackjack
+                player={props.player}
+                history={history}
+                match={match}
+                location={location}
+                {...rest}
+              />
+            )
+          }
         />
 
         <Route

@@ -5,7 +5,7 @@ import Section from '../components/Section';
 
 export default class RockPaperScissors extends React.Component {
   render() {
-    console.log(this.props);
+    // console.log(this.props);
     return (
       <Section
         color='#66ad03'

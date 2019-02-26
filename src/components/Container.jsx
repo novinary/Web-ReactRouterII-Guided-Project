@@ -37,7 +37,13 @@ export default function Container(props) {
       <StyledContainer>
         <nav>
           <Link to='/'>Home</Link>
-          <Link to='/blackjack'>Black</Link>
+          {/* <Link to='/blackjack'>Black</Link> */}
+          <Link to={{
+            pathname: '/blackjack',
+            state: { from: 'Link at top of page' },
+          }}>
+            Black
+          </Link>
           <Link to='/rock_paper_scissors'>Rock</Link>
           <Link to='/tic_tac_toe'>Tic</Link>
         </nav>
@@ -45,20 +51,17 @@ export default function Container(props) {
         <Route
           path='/blackjack'
           children={
-            ({ history, match, location, ...rest }) => (
+            (props) => (
               <Blackjack
                 player={props.player}
-                history={history}
-                match={match}
-                location={location}
-                {...rest}
+                {...props}
               />
             )
           }
         />
 
         <Route
-          // path='/rock_paper_scissors'
+          path='/rock_paper_scissors'
           component={RockPaperScissors}
         />
 

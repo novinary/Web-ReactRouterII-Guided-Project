@@ -4,13 +4,18 @@ import Section from '../components/Section';
 
 
 export default function Blackjack(props) {
-  console.log(props);
+  // console.log(props);
   return (
     <Section
       color='#4286f4'
       heading='Blackjack'
       content={`${props.player} will be playing Blackjack.`}
     >
+      {
+        props.match
+          ? <span>URL Matches!</span>
+          : <span>URL does not Match</span>
+      }
     </Section>
   );
 }

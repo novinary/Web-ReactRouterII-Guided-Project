@@ -58,7 +58,7 @@ export default function Container(props) {
         />
 
         <Route
-          path='/rock_paper_scissors'
+          // path='/rock_paper_scissors'
           component={RockPaperScissors}
         />
 

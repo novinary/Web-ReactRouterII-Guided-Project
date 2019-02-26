@@ -20,6 +20,6 @@ We need `node` & `npm`, as well as packages `live-server` and `eslint` installed
   * Learn about `history.replace()`.
   * Learn about the `NavLink` component.
   * Style Links and Navlinks using `styled-components`.
-  * Learn about `Switch`.
-  * Learn about `Redirect`.
+  * Learn about `Switch` component.
+  * Learn about `Redirect` component.
   * Learn about `withRouter` HOC.

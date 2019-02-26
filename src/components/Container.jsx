@@ -31,7 +31,7 @@ const StyledContainer = styled.div`
   }
 `;
 
-export default function Container() {
+export default function Container(props) {
   return (
     <Router>
       <StyledContainer>
@@ -44,7 +44,7 @@ export default function Container() {
 
         <Route
           path='/blackjack'
-          component={Blackjack}
+          render={() => <Blackjack player={props.player} />}
         />
 
         <Route
@@ -61,7 +61,8 @@ export default function Container() {
           color='#d6247a'
           heading='Log In'
           content='Log in, please.'
-        />
+        >
+        </Section>
       </StyledContainer>
     </Router>
   );

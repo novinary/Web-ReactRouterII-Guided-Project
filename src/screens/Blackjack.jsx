@@ -4,6 +4,7 @@ import Section from '../components/Section';
 
 
 export default function Blackjack(props) {
+  console.log(props);
   return (
     <Section
       color='#4286f4'

@@ -43,5 +43,5 @@ Section.propTypes = {
 Section.defaultProps = {
   heading: 'Default Section',
   content: 'This is default content.',
-  color: 'white',
+  color: '#ffffff',
 };

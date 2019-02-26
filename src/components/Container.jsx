@@ -51,10 +51,10 @@ export default function Container(props) {
         <Route
           path='/blackjack'
           children={
-            (props) => (
+            (pr) => (
               <Blackjack
                 player={props.player}
-                {...props}
+                {...pr}
               />
             )
           }

@@ -1,5 +1,5 @@
 import React from 'react';
-import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Link, NavLink } from 'react-router-dom';
 import styled from 'styled-components';
 import Blackjack from '../screens/Blackjack';
 import RockPaperScissors from '../screens/RockPaperScissors';
@@ -28,7 +28,15 @@ const StyledContainer = styled.div`
     padding: 0 20px;
     display: flex;
     justify-content: space-between;
+
+    .active {
+      font-weight: bold;
+    }
   }
+`;
+
+const StyledLink = styled(Link)`
+  color: orange;
 `;
 
 export default function Container(props) {
@@ -36,16 +44,14 @@ export default function Container(props) {
     <Router>
       <StyledContainer>
         <nav>
-          <Link to='/'>Home</Link>
-          {/* <Link to='/blackjack'>Black</Link> */}
-          <Link to={{
+          <NavLink to={{
             pathname: '/blackjack',
             state: { from: 'Link at top of page' },
           }}>
             Black
-          </Link>
-          <Link to='/rock_paper_scissors'>Rock</Link>
-          <Link to='/tic_tac_toe'>Tic</Link>
+          </NavLink>
+          <NavLink to='/rock_paper_scissors'>Rock</NavLink>
+          <NavLink to='/tic_tac_toe'>Tic</NavLink>
         </nav>
 
         <Route

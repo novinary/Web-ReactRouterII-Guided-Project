@@ -50,7 +50,7 @@ export default function Container(props) {
 
         <Route
           path='/blackjack'
-          children={
+          render={
             (pr) => (
               <Blackjack
                 player={props.player}

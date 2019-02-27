@@ -23,3 +23,13 @@ We need `node` & `npm`, as well as packages `live-server` and `eslint` installed
   * Learn about `Switch` component.
   * Learn about `Redirect` component.
   * Learn about `withRouter` HOC.
+
+# Exercises
+  * How to pass player into components.
+  * How to have something render always but still get history, location and match.
+  * Have a `children` component render to the screen whether there is match or not.
+  * Have tic tac toe randomly redirect to Home.
+  * Have blackjack check for 'authed' in local storage and send you to Home if there isn't one.
+  * Style a Navlink using styled-components.
+  * Use withRouter to give a component knowledge of history, match and location.
+  * Create dynamic subroutes to blackjack and have the links disappear when user clicks link to sub route.
